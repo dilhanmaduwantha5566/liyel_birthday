@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#063b61" />
+  <meta name="description" content="Liyel Agreth's First Birthday — an ocean-themed celebration." />
+  <title>Liyel Agreth • First Birthday</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="splash-screen" id="splashScreen">
+    <div class="splash-glow"></div>
+    <div class="splash-bubbles" aria-hidden="true">
+      <i></i><i></i><i></i><i></i><i></i>
+    </div>
+    <div class="splash-content">
+      <div class="splash-whale">🐳</div>
+      <div class="splash-eyebrow">A LITTLE OCEAN ADVENTURE</div>
+      <h1>Liyel<br><span>turns ONE!</span></h1>
+      <p>Come dive into a sea of love, giggles &amp; magic 💙</p>
+      <button class="enter-btn" id="enterBtn">
+        <span>ENTER THE OCEAN</span><b>🌊</b>
+      </button>
+      <small>Tap to begin • Music &amp; ocean sounds</small>
+    </div>
+  </div>
+
+  <div class="ocean-bg" aria-hidden="true">
+    <span class="sun-ray ray-1"></span><span class="sun-ray ray-2"></span><span class="sun-ray ray-3"></span>
+    <div class="bubble b1"></div><div class="bubble b2"></div><div class="bubble b3"></div>
+    <div class="bubble b4"></div><div class="bubble b5"></div><div class="bubble b6"></div>
+    <div class="fish fish-a">🐠</div><div class="fish fish-b">🐟</div>
+    <div class="fish fish-c">🐡</div><div class="fish fish-d">🐠</div>
+    <div class="turtle">🐢</div><div class="octopus">🐙</div>
+  </div>
+
+  <header class="hero" id="home">
+    <nav class="nav">
+      <div class="brand"><span>🫧</span> Liyel's Ocean</div>
+      <button class="music-btn" id="musicBtn" aria-label="Toggle ocean music">
+        <span class="music-bars"><i></i><i></i><i></i><i></i></span>
+        <span class="music-label">Music off</span>
+      </button>
+    </nav>
+
+    <div class="hero-content">
+      <div class="eyebrow">A LITTLE SPLASH • A BIG MILESTONE</div>
+      <h1>Our little sailor<br><span>turns ONE!</span></h1>
+      <p class="hero-name">LIYEL AGRETH</p>
+      <p class="hero-copy">Come dive beneath the waves with us and celebrate our precious boy's very first adventure around the sun. 🌊💙</p>
+
+      <div class="date-card">
+        <div><small>WEDNESDAY</small><strong>16</strong><small>SEPTEMBER 2026</small></div>
+        <div class="date-divider"></div>
+        <div><small>VENUE</small><strong class="venue">Grand Elite</strong><small>Nawagamuwa</small></div>
+      </div>
+
+      <a class="cta" href="#details">Dive into the party <span>↓</span></a>
+    </div>
+    <div class="scroll-hint">SCROLL TO EXPLORE <span>⌄</span></div>
+  </header>
+
+  <main>
+    <section class="reveal story" id="details">
+      <div class="section-tag">🌊 OUR LITTLE OCEAN ADVENTURE</div>
+      <h2>One tiny human.<br><span>A whole ocean of love.</span></h2>
+      <p>From his first smile to his first steps, every little moment has been a treasure. Now it's time for bubbles, giggles, sea friends and one unforgettable first birthday.</p>
+      <div class="stats">
+        <div><b>1</b><span>Wonderful year</span></div>
+        <div><b>∞</b><span>Ocean of love</span></div>
+        <div><b>100%</b><span>Baby joy</span></div>
+      </div>
+    </section>
+
+    <section class="reveal invite">
+      <div class="image-wrap">
+        <img src="assets/ocean-baby-theme.jpg" alt="Cute ocean animals swimming underwater" />
+        <div class="image-glow"></div>
+      </div>
+      <div class="invite-copy">
+        <div class="section-tag">🐚 YOU'RE INVITED</div>
+        <h2>Let's make<br><span>a splash!</span></h2>
+        <p>Bring your biggest smile and join our little ocean crew for cake, cuddles, colorful sea creatures and happy memories.</p>
+        <div class="pill-row">
+          <span>🐬 Sea friends</span><span>🪼 Bubbles</span><span>🎂 Birthday cake</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="reveal details-card">
+      <div class="detail"><div class="icon">📅</div><div><small>WHEN</small><h3>16 September 2026</h3><p>Wednesday</p></div></div>
+      <div class="detail"><div class="icon">📍</div><div><small>WHERE</small><h3>Grand Elite</h3><p>Nawagamuwa</p></div></div>
+      <div class="detail"><div class="icon">💙</div><div><small>THEME</small><h3>Under the Sea</h3><p>Come dressed for an ocean adventure</p></div></div>
+    </section>
+
+    <section class="reveal countdown-section">
+      <div class="section-tag">⏳ THE TIDE IS COMING</div>
+      <h2>Counting down to <span>ONE!</span></h2>
+      <div class="countdown" id="countdown">
+        <div><strong id="days">00</strong><span>DAYS</span></div>
+        <div><strong id="hours">00</strong><span>HOURS</span></div>
+        <div><strong id="minutes">00</strong><span>MINUTES</span></div>
+        <div><strong id="seconds">00</strong><span>SECONDS</span></div>
+      </div>
+    </section>
+
+    <section class="reveal rsvp">
+      <div class="rsvp-shell">
+        <div>
+          <div class="section-tag">🐳 SAVE YOUR SPOT</div>
+          <h2>Will you join<br><span>our little crew?</span></h2>
+          <p>We'd love to celebrate this special day with you.</p>
+        </div>
+        <button class="rsvp-btn" id="rsvpBtn">YES, I'LL DIVE IN! 🐬</button>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-bubbles">🫧 🫧 🫧</div>
+    <p>Made with an ocean of love for <strong>Liyel Agreth</strong> 💙</p>
+    <small>See you beneath the waves • 16.09.2026</small>
+  </footer>
+
+  <div class="modal" id="modal" aria-hidden="true">
+    <div class="modal-card">
+      <button class="close" id="closeModal">×</button>
+      <div class="modal-icon">🐳</div>
+      <h2>Yay! You're coming!</h2>
+      <p>We can't wait to make a splash with you at Liyel's first birthday. 💙</p>
+      <button class="cta small" id="backBtn">Back to the ocean</button>
+    </div>
+  </div>
+
+  <canvas id="confetti"></canvas>
+  <script src="script.js"></script>
+</body>
+</html>
