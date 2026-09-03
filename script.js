@@ -24,6 +24,14 @@ document.getElementById("closeModal").addEventListener("click",closeModal);
 document.getElementById("backBtn").addEventListener("click",closeModal);
 modal.addEventListener("click",e=>{if(e.target===modal)closeModal()});
 
+const venueMapUrl="https://www.google.com/maps/search/?api=1&query=Grand+Elite+Nawagamuwa";
+const mapCard=document.getElementById("mapCard");
+function openVenueMap(){window.open(venueMapUrl,"_blank","noopener,noreferrer");}
+if(mapCard){
+  mapCard.addEventListener("click",openVenueMap);
+  mapCard.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();openVenueMap();}});
+}
+
 const canvas=document.getElementById("confetti"),ctx=canvas.getContext("2d");
 function launchConfetti(){
   canvas.width=innerWidth;canvas.height=innerHeight;
