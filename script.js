@@ -52,7 +52,7 @@ function startOceanVibe(){
   if(audioCtx) return;
   audioCtx=new (window.AudioContext||window.webkitAudioContext)();
   masterGain=audioCtx.createGain();
-  masterGain.gain.value=.18;
+  masterGain.gain.value=.27;
   masterGain.connect(audioCtx.destination);
 
   // Soft filtered noise = gentle underwater ambience.
@@ -63,7 +63,7 @@ function startOceanVibe(){
   noiseNode.buffer=buffer; noiseNode.loop=true;
   const filter=audioCtx.createBiquadFilter();
   filter.type="lowpass"; filter.frequency.value=1100;
-  const noiseGain=audioCtx.createGain(); noiseGain.gain.value=.34;
+  const noiseGain=audioCtx.createGain(); noiseGain.gain.value=.51;
   noiseNode.connect(filter).connect(noiseGain).connect(masterGain);
   noiseNode.start();
 
@@ -75,7 +75,7 @@ function startOceanVibe(){
     const osc=audioCtx.createOscillator(), g=audioCtx.createGain();
     osc.type="triangle"; osc.frequency.value=notes[n++%notes.length];
     g.gain.setValueAtTime(0,audioCtx.currentTime);
-    g.gain.linearRampToValueAtTime(.18,audioCtx.currentTime+.06);
+    g.gain.linearRampToValueAtTime(.27,audioCtx.currentTime+.06);
     g.gain.exponentialRampToValueAtTime(.001,audioCtx.currentTime+2.2);
     osc.connect(g).connect(masterGain); osc.start(); osc.stop(audioCtx.currentTime+2.4);
   };
