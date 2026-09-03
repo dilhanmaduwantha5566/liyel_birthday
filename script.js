@@ -52,18 +52,18 @@ function startOceanVibe(){
   if(audioCtx) return;
   audioCtx=new (window.AudioContext||window.webkitAudioContext)();
   masterGain=audioCtx.createGain();
-  masterGain.gain.value=.055;
+  masterGain.gain.value=.18;
   masterGain.connect(audioCtx.destination);
 
   // Soft filtered noise = gentle underwater ambience.
   const buffer=audioCtx.createBuffer(1,audioCtx.sampleRate*2,audioCtx.sampleRate);
   const data=buffer.getChannelData(0);
-  for(let i=0;i<data.length;i++) data[i]=(Math.random()*2-1)*0.35;
+  for(let i=0;i<data.length;i++) data[i]=(Math.random()*2-1)*0.5;
   noiseNode=audioCtx.createBufferSource();
   noiseNode.buffer=buffer; noiseNode.loop=true;
   const filter=audioCtx.createBiquadFilter();
-  filter.type="lowpass"; filter.frequency.value=900;
-  const noiseGain=audioCtx.createGain(); noiseGain.gain.value=.22;
+  filter.type="lowpass"; filter.frequency.value=1100;
+  const noiseGain=audioCtx.createGain(); noiseGain.gain.value=.34;
   noiseNode.connect(filter).connect(noiseGain).connect(masterGain);
   noiseNode.start();
 
@@ -73,13 +73,13 @@ function startOceanVibe(){
   const playNote=()=>{
     if(!audioCtx)return;
     const osc=audioCtx.createOscillator(), g=audioCtx.createGain();
-    osc.type="sine"; osc.frequency.value=notes[n++%notes.length];
+    osc.type="triangle"; osc.frequency.value=notes[n++%notes.length];
     g.gain.setValueAtTime(0,audioCtx.currentTime);
-    g.gain.linearRampToValueAtTime(.13,audioCtx.currentTime+.04);
-    g.gain.exponentialRampToValueAtTime(.001,audioCtx.currentTime+1.8);
-    osc.connect(g).connect(masterGain); osc.start(); osc.stop(audioCtx.currentTime+1.9);
+    g.gain.linearRampToValueAtTime(.18,audioCtx.currentTime+.06);
+    g.gain.exponentialRampToValueAtTime(.001,audioCtx.currentTime+2.2);
+    osc.connect(g).connect(masterGain); osc.start(); osc.stop(audioCtx.currentTime+2.4);
   };
-  playNote(); musicTimer=setInterval(playNote,900);
+  playNote(); musicTimer=setInterval(playNote,750);
   musicBtn.classList.add("playing"); musicLabel.textContent="Music on";
 }
 
