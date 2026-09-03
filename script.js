@@ -93,6 +93,37 @@ function stopOceanVibe(){
 
 musicBtn.addEventListener("click",()=>audioCtx?stopOceanVibe():startOceanVibe());
 
+const bubbleLayer=document.createElement("div");
+bubbleLayer.className="bubble-layer";
+document.body.appendChild(bubbleLayer);
+
+function createPointerBubble(x,y){
+  const bubble=document.createElement("span");
+  const size=8+Math.random()*18;
+  bubble.className="cursor-bubble";
+  bubble.style.left=`${x}px`;
+  bubble.style.top=`${y}px`;
+  bubble.style.width=`${size}px`;
+  bubble.style.height=`${size}px`;
+  bubble.style.setProperty("--dx",`${(Math.random()*60-30).toFixed(2)}px`);
+  bubble.style.setProperty("--dy",`${(-20-Math.random()*80).toFixed(2)}px`);
+  bubbleLayer.appendChild(bubble);
+  setTimeout(()=>bubble.remove(),1400);
+}
+
+document.addEventListener("pointermove",event=>{
+  if(document.getElementById("splashScreen") && event.target.closest("#splashScreen")) return;
+  if(Math.random() < 0.22) createPointerBubble(event.clientX, event.clientY);
+});
+
+document.addEventListener("pointerdown",event=>{
+  for(let i=0;i<3;i++){
+    const offsetX=(Math.random()-0.5)*24;
+    const offsetY=(Math.random()-0.5)*24;
+    setTimeout(()=>createPointerBubble(event.clientX+offsetX, event.clientY+offsetY), i*60);
+  }
+});
+
 const splash=document.getElementById("splashScreen");
 document.getElementById("enterBtn").addEventListener("click",()=>{
   startOceanVibe();
