@@ -5,7 +5,9 @@ A modern, animated, responsive birthday invitation website for **Liyel Agreth's 
 ## Event
 - **Name:** Liyel Agreth
 - **Date:** 16 September 2026
+- **Time:** 06.00 PM
 - **Venue:** Hotel Grand Elite - Luxury Banquets
+- **Floor:** 2nd floor
 - **Theme:** Under the Sea / Ocean
 
 ## Deploy on GitHub Pages
