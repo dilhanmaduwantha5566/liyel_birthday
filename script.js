@@ -24,7 +24,7 @@ document.getElementById("closeModal").addEventListener("click",closeModal);
 document.getElementById("backBtn").addEventListener("click",closeModal);
 modal.addEventListener("click",e=>{if(e.target===modal)closeModal()});
 
-const venueMapUrl="https://www.google.com/maps/search/?api=1&query=Grand+Elite+Nawagamuwa";
+const venueMapUrl="https://www.google.com/maps/search/?api=1&query=Hotel+Grand+Elite+-+Luxury+Banquets";
 const mapCard=document.getElementById("mapCard");
 function openVenueMap(){window.open(venueMapUrl,"_blank","noopener,noreferrer");}
 if(mapCard){
